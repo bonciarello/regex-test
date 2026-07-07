@@ -1,0 +1,120 @@
+/* ===== TestArea ===== */
+.test-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.test-area-label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+/* ===== Container (layered textarea + highlight) ===== */
+.test-area-container {
+  position: relative;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.test-area-container:focus-within {
+  border-color: var(--color-indigo);
+  box-shadow: 0 0 0 3px var(--color-indigo-light);
+}
+
+.test-area-container.has-matches {
+  border-color: var(--color-emerald);
+}
+
+.test-area-container.has-matches:focus-within {
+  border-color: var(--color-emerald);
+  box-shadow: 0 0 0 3px var(--color-emerald-light);
+}
+
+/* ===== Highlight layer (behind textarea) ===== */
+.test-area-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: transparent;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* ===== Match marks ===== */
+.test-area-match {
+  border-radius: 2px;
+  padding: 1px 0;
+  color: transparent;
+}
+
+.test-area-match.match-c1 { background: var(--color-match-1); }
+.test-area-match.match-c2 { background: var(--color-match-2); }
+.test-area-match.match-c3 { background: var(--color-match-3); }
+.test-area-match.match-c4 { background: var(--color-match-4); }
+.test-area-match.match-c5 { background: var(--color-match-5); }
+
+/* ===== Textarea ===== */
+.test-area-field {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-ink);
+  padding: var(--space-3) var(--space-4);
+  resize: vertical;
+  min-height: 160px;
+  caret-color: var(--color-indigo);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.test-area-field::placeholder {
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+
+/* Scrollbar inside textarea */
+.test-area-field::-webkit-scrollbar {
+  width: 6px;
+}
+.test-area-field::-webkit-scrollbar-track {
+  background: transparent;
+}
+.test-area-field::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .test-area-field {
+    font-size: 16px; /* Prevent iOS zoom */
+    min-height: 120px;
+  }
+
+  .test-area-highlight {
+    font-size: 16px;
+  }
+}

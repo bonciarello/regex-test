@@ -1,0 +1,143 @@
+/* ===== RegexInput ===== */
+.regex-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.regex-input-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.regex-input-label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+.regex-input-flags-display {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  background: var(--color-cloud);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.regex-input-flags-value {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* ===== Input wrapper ===== */
+.regex-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.regex-input-wrapper:focus-within {
+  border-color: var(--color-indigo);
+  box-shadow: 0 0 0 3px var(--color-indigo-light);
+}
+
+.regex-input-wrapper.has-error {
+  border-color: var(--color-crimson);
+}
+
+.regex-input-wrapper.has-error:focus-within {
+  box-shadow: 0 0 0 3px var(--color-crimson-light);
+}
+
+.regex-input-wrapper.has-value:not(.has-error) {
+  border-color: var(--color-emerald);
+}
+
+.regex-input-wrapper.has-value:not(.has-error):focus-within {
+  box-shadow: 0 0 0 3px var(--color-emerald-light);
+}
+
+.regex-input-delimiter {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-muted);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  user-select: none;
+  line-height: 1.5;
+}
+
+.regex-input-delimiter:last-of-type {
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+}
+
+.regex-input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  padding: var(--space-2) var(--space-1);
+  line-height: 1.5;
+  min-width: 0;
+}
+
+.regex-input-field::placeholder {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+}
+
+.regex-input-flags-suffix {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-indigo);
+  font-weight: 500;
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+  user-select: none;
+}
+
+/* ===== Error ===== */
+.regex-input-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  background: var(--color-crimson-light);
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-crimson);
+  line-height: 1.5;
+}
+
+.regex-input-error-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ===== Hint ===== */
+.regex-input-hint {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.regex-input-hint code {
+  font-family: var(--font-mono);
+  background: var(--color-border-light);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
