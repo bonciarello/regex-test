@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://cristianporco.it/app/validatore-di-espressioni-regolari-con-test-interattivo-e-libreria-pattern/sitemap.xml
